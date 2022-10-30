@@ -1,0 +1,42 @@
+package com.student.tracker;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class StudentDbUtil {
+private DataSource dataSource;
+
+public StudentDbUtil(DataSource theDataSource) {
+	this.dataSource = theDataSource;
+   }
+
+	public List<Student> getStudent() throws Exception{
+		List<Student> students = new ArrayList<>();
+		
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			con = dataSource.getConnection();
+			st = con.createStatement();
+			String sql = "select * from student";
+			rs = st.executeQuery(sql);
+			
+		}
+		catch(Exception e) {
+			
+		}
+		
+		return students;
+		
+	}
+
+
+
+}

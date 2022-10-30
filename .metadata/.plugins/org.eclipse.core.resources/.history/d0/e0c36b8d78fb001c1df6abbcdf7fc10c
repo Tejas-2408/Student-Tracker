@@ -1,0 +1,24 @@
+package com.student.tracker;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class StudentDbUtil {
+private DataSource dataSource;
+
+public StudentDbUtil(DataSource theDataSource) {
+	this.dataSource = theDataSource;
+   }
+
+	public List<Student> getStudent() throws Exception{
+		List<Student> students = new ArrayList<>();
+		
+		return students;
+		
+	}
+
+
+
+}
